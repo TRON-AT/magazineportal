@@ -7,24 +7,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 const featuredMagazines = [
 	{
 		id: "1",
-		title: "Sain Srijan Patal Monthly Magazine 5th issue",
-		filename: "Sain Srijan Patal  Monthly Magazine 5th issue ( December-2024).pdf",
-		date: "दिसंबर 2024",
-		coverImage: "/pdf/Sain Srijan Patal  Monthly Magazine 5th issue ( December-2024).png",
-	},
-	{
-		id: "2",
-		title: "Sain Srijan Patal Monthly Magazine 7th issue",
-		filename: "Sain Srijan Patal Monthly Magazine 7th issue (Febuary-2025).pdf",
-		date: "फरवरी 2025",
-		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 7th issue (Febuary-2025).png",
-	},
-	{
-		id: "3",
-		title: "Sain Srijan Patal Monthly Magazine 8th issue",
-		filename: "Sain Srijan Patal Monthly Magazine 8th issue (March-2025).pdf",
-		date: "मार्च 2025",
-		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 8th issue (March-2025).png",
+        title: "Sain Srijan Patal Monthly Magazine 10th issue",
+        filename: "Sain Srijan Patal Monthly Magazine 10th issue (May-2025).pdf",
+        date: "मई 2025",
+        coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 10th issue (May-2025).png",
+    },
+    {
+        id: "2",
+        title: "Sain Srijan Patal Monthly Magazine 9th issue",
+        filename: "Sain Srijan Patal Monthly Magazine 9th issue (April-2025).pdf",
+        date: "अप्रैल 2025",
+        coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 9th issue (April-2025).png",
+    },
+    {
+        id: "3",
+        title: "Sain Srijan Patal Monthly Magazine 8th issue",
+        filename: "Sain Srijan Patal Monthly Magazine 8th issue (March-2025).pdf",
+        date: "मार्च 2025",
+        coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 8th issue (March-2025).png",
 	},
 ]
 
