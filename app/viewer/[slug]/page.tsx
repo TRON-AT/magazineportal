@@ -8,42 +8,66 @@ import { Button } from "@/components/ui/button"
 
 // PDF data - same as in magazine-grid.tsx
 const pdfList = [
-	{
-		id: "1",
-		title: "Sain Srijan Patal Monthly Magazine 5th issue",
-		filename: "Sain Srijan Patal  Monthly Magazine 5th issue ( December-2024).pdf",
-		date: "दिसंबर 2024",
-	},
-	{
-		id: "2",
-		title: "Sain Srijan Patal Monthly Magazine 7th issue",
-		filename: "Sain Srijan Patal Monthly Magazine 7th issue (Febuary-2025).pdf",
-		date: "फरवरी 2025",
-	},
-	{
-		id: "3",
-		title: "Sain Srijan Patal Monthly Magazine 8th issue",
-		filename: "Sain Srijan Patal Monthly Magazine 8th issue (March-2025).pdf",
-		date: "मार्च 2025",
-	},
-	{
-		id: "4",
-		title: "Sain Srijan Patal Monthly Magazine 9th issue",
-		filename: "Sain Srijan Patal Monthly Magazine 9th issue (April-2025).pdf",
-		date: "अप्रैल 2025",
-	},
-	{
-		id: "5",
-		title: "Sain Srijan Patal News Letter First Issue",
-		filename: "Sain Srijan Patal News Letter  First Issue.pdf",
-		date: "जनवरी 2025",
-	},
-	{
-		id: "6",
-		title: "Sain Srijan Patal News Letter Fourth Issue",
-		filename: "Sain Srijan Patal News Letter Fourth issue ( November-2024).pdf",
-		date: "नवंबर 2024",
-	},
+    {
+        id: "1",
+        title: "Sain Srijan Patal Monthly Magazine 10th issue",
+        filename: "Sain Srijan Patal Monthly Magazine 10th issue (May-2025).pdf",
+        date: "मई 2025",
+    },
+    {
+        id: "2",
+        title: "Sain Srijan Patal Monthly Magazine 9th issue",
+        filename: "Sain Srijan Patal Monthly Magazine 9th issue (April-2025).pdf",
+        date: "अप्रैल 2025",
+    },
+    {
+        id: "3",
+        title: "Sain Srijan Patal Monthly Magazine 8th issue",
+        filename: "Sain Srijan Patal Monthly Magazine 8th issue (March-2025).pdf",
+        date: "मार्च 2025",
+    },
+    {
+        id: "4",
+        title: "Sain Srijan Patal Monthly Magazine 7th issue",
+        filename: "Sain Srijan Patal Monthly Magazine 7th issue (Febuary-2025).pdf",
+        date: "फरवरी 2025",
+    },
+    {
+        id: "5",
+        title: "Sain Srijan Patal Monthly Magazine 6th issue",
+        filename: "Sain Srijan Patal  Monthly Magazine 6th  issue ( January-2025).pdf",
+        date: "जनवरी 2025",
+    },
+    {
+        id: "6",
+        title: "Sain Srijan Patal Monthly Magazine 5th issue",
+        filename: "Sain Srijan Patal  Monthly Magazine 5th issue ( December-2024).pdf",
+        date: "दिसंबर 2024",
+    },
+    {
+        id: "7",
+        title: "Sain Srijan Patal News Letter Fourth Issue",
+        filename: "Sain Srijan Patal News Letter Fourth issue ( November-2024).pdf",
+        date: "नवंबर 2024",
+    },
+    {
+        id: "8",
+        title: "Sain Srijan Patal News Letter Third Issue",
+        filename: "Sain Srijan Patal News Letter Third Issue (October 2024).pdf",
+        date: "अक्टूबर 2024",
+    },
+    {
+        id: "9",
+        title: "Sain Srijan Patal News Letter Second Issue",
+        filename: "Sain Srijan Patal News Letter second Issue.pdf",
+        date: "सितंबर 2024",
+    },
+    {
+        id: "10",
+        title: "Sain Srijan Patal News Letter First Issue",
+        filename: "Sain Srijan Patal News Letter  First Issue.pdf",
+        date: "अगस्त 2024",
+    },
 ]
 
 export default function MagazineViewerPage() {

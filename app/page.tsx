@@ -32,41 +32,30 @@ export default function HomePage() {
 	return (
 		<div className="min-h-screen w-full overflow-x-hidden">
 			{/* Hero Section */}
-			<section className="relative w-full overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 py-8 sm:py-12 md:py-16 lg:py-24">
-				<div className="absolute inset-0 bg-gradient-to-r from-orange-100/20 to-amber-100/20"></div>
-				<div className="container relative w-full">
-					<div className="mx-auto max-w-4xl text-center px-3 sm:px-4">
-						<div className="mb-3 sm:mb-4 md:mb-6 inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-orange-100 px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm font-medium text-orange-800">
-							<BookOpen className="h-3 w-3 sm:h-4 sm:w-4" />
-							<span className="whitespace-nowrap">देवभूमि उत्तराखंड की सांस्कृतिक विरासत</span>
-						</div>
-						<h1 className="mb-3 sm:mb-4 md:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
-							साईं सृजन पटल
-						</h1>
-						<p className="mb-4 sm:mb-6 md:mb-8 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
-							उत्तराखंड की समृद्ध संस्कृति और विरासत को जन-जन तक पहुंचाने का मिशन
-						</p>
-						<p className="mb-6 sm:mb-8 md:mb-10 text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-							"लेखन और सृजन के उन्नयन के लिए सदैव प्रतिबद्धता"
-						</p>
-						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
-							<Button
-								asChild
-								size="lg"
-								className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto text-sm sm:text-base"
-							>
-								<Link href="/magazines">पत्रिका पढ़ें</Link>
-							</Button>
-							<Button
-								asChild
-								variant="outline"
-								size="lg"
-								className="border-orange-600 text-orange-600 hover:bg-orange-50 w-full sm:w-auto text-sm sm:text-base"
-							>
-								<Link href="#about">हमारे बारे में</Link>
-							</Button>
-						</div>
-					</div>
+			<section className="relative w-full overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 py-8 sm:py-12 md:py-16 lg:py-24 flex flex-col items-center justify-center">
+				{/* Use next/image for optimized images and correct the path */}
+				{/* eslint-disable-next-line @next/next/no-img-element */}
+				<img
+					src="/hero.jpg"
+					alt="साईं सृजन पटल"
+					className="max-w-full h-auto mb-6 rounded-xl shadow-lg"
+				/>
+				<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
+					<Button
+						asChild
+						size="lg"
+						className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto text-sm sm:text-base"
+					>
+						<Link href="/magazines">पत्रिका पढ़ें</Link>
+					</Button>
+					<Button
+						asChild
+						variant="outline"
+						size="lg"
+						className="border-orange-600 text-orange-600 hover:bg-orange-50 w-full sm:w-auto text-sm sm:text-base"
+					>
+						<Link href="#about">हमारे बारे में</Link>
+					</Button>
 				</div>
 			</section>
 

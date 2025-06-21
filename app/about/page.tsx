@@ -161,6 +161,36 @@ export default function AboutPage() {
                 </Card>
               </div>
             </div>
+
+            {/* Image Grid */}
+            <div className="mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
+                  <img
+                    src="/ab1.jpg"
+                    alt="प्रो. के.एल. तलवाड़ छवि 1"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
+                  <img
+                    src="/ab2.jpg"
+                    alt="प्रो. के.एल. तलवाड़ छवि 2"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
+                  <img
+                    src="/ab3.jpg"
+                    alt="प्रो. के.एल. तलवाड़ छवि 3"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

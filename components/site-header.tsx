@@ -78,6 +78,13 @@ export function SiteHeader() {
                     पत्रिकाएं
                   </Link>
                   <Link
+                    href="/gallery"
+                    className="flex items-center py-3 px-3 text-base font-medium text-gray-900 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    गैलरी
+                  </Link>
+                  <Link
                     href="/about"
                     className="flex items-center py-3 px-3 text-base font-medium text-gray-900 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
                     onClick={() => setIsOpen(false)}
