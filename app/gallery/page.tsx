@@ -2,20 +2,56 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, Download, ZoomIn, ZoomOut, RotateCw } from "lucide-react"
+import { Images, Download, ZoomIn, X, ChevronUp, ChevronDown } from "lucide-react"
 import { useState, useEffect } from "react"
+import Image from "next/image"
 
-// PDF document to display
-const pdfDocument = {
-	title: "Website Gallery Document",
-	src: "/pdf/Website gallery doc.pdf",
-	description: "उत्तराखंड की समृद्ध संस्कृति और परंपराओं का दस्तावेज़"
+// Type definition for gallery image
+type GalleryImage = {
+	id: number
+	src: string
+	alt: string
+	title: string
 }
+
+// Gallery images
+const galleryImages: GalleryImage[] = [
+	{
+		id: 1,
+		src: "/gallery/1.jpg",
+		alt: "गैलरी छवि 1",
+		title: "छवि 1"
+	},
+	{
+		id: 2,
+		src: "/gallery/2.jpg",
+		alt: "गैलरी छवि 2",
+		title: "छवि 2"
+	},
+	{
+		id: 3,
+		src: "/gallery/3.jpg",
+		alt: "गैलरी छवि 3",
+		title: "छवि 3"
+	},
+	{
+		id: 4,
+		src: "/gallery/4.jpg",
+		alt: "गैलरी छवि 4",
+		title: "छवि 4"
+	},
+	{
+		id: 5,
+		src: "/gallery/5.jpg",
+		alt: "गैलरी छवि 5",
+		title: "छवि 5"
+	}
+]
 
 export default function GalleryPage() {
 	const [isMobile, setIsMobile] = useState(false)
-	const [pdfScale, setPdfScale] = useState(1)
-
+	const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
+	const [currentPage, setCurrentPage] = useState(1)
 	useEffect(() => {
 		const checkMobile = () => {
 			setIsMobile(window.innerWidth < 768)
@@ -27,150 +63,235 @@ export default function GalleryPage() {
 		return () => window.removeEventListener('resize', checkMobile)
 	}, [])
 
-	const handleDownload = () => {
+	// Track current page based on scroll position
+	useEffect(() => {
+		const handleScroll = () => {
+			const pageElements = galleryImages.map((_, index) => 
+				document.getElementById(`page-${index + 1}`)
+			)
+			
+			const scrollPosition = window.scrollY + window.innerHeight / 2
+			
+			for (let i = pageElements.length - 1; i >= 0; i--) {
+				const element = pageElements[i]
+				if (element && element.offsetTop <= scrollPosition) {
+					setCurrentPage(i + 1)
+					break
+				}
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll)
+		handleScroll() // Initial check
+		
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [])
+
+	const handleImageClick = (image: GalleryImage) => {
+		setSelectedImage(image)
+	}
+
+	const closeModal = () => {
+		setSelectedImage(null)
+	}
+
+	const downloadImage = (imageSrc: string, imageName: string) => {
 		const link = document.createElement('a')
-		link.href = pdfDocument.src
-		link.download = 'Website-Gallery-Document.pdf'
+		link.href = imageSrc
+		link.download = `${imageName}.jpg`
 		document.body.appendChild(link)
 		link.click()
 		document.body.removeChild(link)
 	}
 
-	const openPdfInNewTab = () => {
-		window.open(pdfDocument.src, '_blank')
+	const scrollToPage = (pageNumber: number) => {
+		const element = document.getElementById(`page-${pageNumber}`)
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+			setCurrentPage(pageNumber)
+		}
+	}
+
+	const nextPage = () => {
+		if (currentPage < galleryImages.length) {
+			scrollToPage(currentPage + 1)
+		}
+	}
+
+	const prevPage = () => {
+		if (currentPage > 1) {
+			scrollToPage(currentPage - 1)
+		}
 	}
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+			{/* Smooth scrolling for better reading experience */}
+			<style jsx global>{`
+				html {
+					scroll-behavior: smooth;
+				}
+				body {
+					overflow-x: hidden;
+				}
+			`}</style>
+			
 			<div className="container mx-auto px-3 sm:px-4 lg:px-6 py-6 sm:py-8 lg:py-12">
 				{/* Header */}
 				<div className="text-center mb-8 sm:mb-12">
 					<div className="flex items-center justify-center mb-4">
-						<FileText className="h-8 w-8 sm:h-10 sm:w-10 text-orange-600 mr-3" />
+						<Images className="h-8 w-8 sm:h-10 sm:w-10 text-orange-600 mr-3" />
 						<h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-							दस्तावेज़ गैलरी
+							छवि पुस्तक
 						</h1>
 					</div>
 					<p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-						{pdfDocument.description}
+						उत्तराखंड की समृद्ध संस्कृति और परंपराओं की छवि संग्रह - एक समय में एक पृष्ठ
 					</p>
-				</div>				{/* PDF Document Card */}
-				<div className="max-w-7xl mx-auto">
-					<Card className="overflow-hidden border-0 shadow-xl bg-white rounded-xl">
-						<CardContent className="p-0">
-							{/* Document Header */}
-							<div className="bg-gradient-to-r from-orange-50 to-amber-50 p-4 sm:p-6 border-b border-gray-100">
-								<div className="text-center">
-									<div className="flex items-center justify-center mb-3">
-										<FileText className="h-7 w-7 text-orange-600 mr-3" />
-										<h2 className="text-xl sm:text-2xl font-bold text-gray-800">
-											{pdfDocument.title}
-										</h2>
-									</div>
-									<p className="text-sm sm:text-base text-gray-600 mb-4">
-										{pdfDocument.description}
-									</p>
-									
-									{/* PDF Controls */}
-									<div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-										<Button
-											onClick={handleDownload}
-											variant="outline"
-											size="sm"
-											className="flex items-center gap-2 text-orange-600 border-orange-300 hover:bg-orange-50 bg-white"
-										>
-											<Download className="h-4 w-4" />
-											<span className="hidden sm:inline">डाउनलोड करें</span>
-											<span className="sm:hidden">डाउनलोड</span>
-										</Button>
-										<Button
-											onClick={openPdfInNewTab}
-											variant="outline"
-											size="sm"
-											className="flex items-center gap-2 text-blue-600 border-blue-300 hover:bg-blue-50 bg-white"
-										>
-											<ZoomIn className="h-4 w-4" />
-											<span className="hidden sm:inline">नई टैब में खोलें</span>
-											<span className="sm:hidden">नई टैब</span>
-										</Button>
-									</div>
-								</div>
+					
+					{/* Reading Instructions */}
+					<div className="mt-6 p-4 bg-white/70 rounded-lg border border-orange-100 max-w-md mx-auto">
+						<p className="text-sm text-orange-700">
+							📖 पुस्तक की तरह पढ़ें - नीचे स्क्रॉल करके अगला पृष्ठ देखें
+						</p>
+					</div>
+				</div>				{/* Single Image Display - PDF-like Reading Experience */}
+				<div className="max-w-5xl mx-auto space-y-8">
+					{galleryImages.map((image, index) => (
+						<div key={image.id} id={`page-${index + 1}`} className="relative scroll-mt-20">
+							{/* Page Number Indicator */}
+							<div className="text-center mb-4">
+								<span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+									पृष्ठ {index + 1} / {galleryImages.length}
+								</span>
 							</div>
 							
-							{/* PDF Viewer Container */}
-							<div className="relative bg-gray-50">
-								{isMobile ? (									// Mobile PDF Viewer
-									<div className="p-4">
-										<div className="bg-white rounded-lg shadow-inner border border-gray-200 overflow-hidden">
-											<iframe
-												src={`${pdfDocument.src}#toolbar=0&navpanes=0&scrollbar=0&page=1&view=FitH&zoom=90`}
-												className="w-full border-0"
-												style={{ 
-													height: '60vh',
-													minHeight: '400px'
-												}}
-												title={pdfDocument.title}
-												loading="lazy"
-												allow="fullscreen"
-											/>
-										</div>
+							<Card className="overflow-hidden border-0 shadow-xl bg-white rounded-xl">
+								<CardContent className="p-0 relative">
+									<div 
+										className={`relative ${
+											isMobile 
+												? 'min-h-[70vh] max-h-[80vh]' 
+												: 'min-h-[75vh] max-h-[85vh]'
+										} overflow-hidden`}
+									>
+										<Image
+											src={image.src}
+											alt={image.alt}
+											fill
+											className="object-contain bg-gray-50"
+											sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+											priority={index <= 1}
+											quality={95}
+										/>
 										
-										{/* Mobile Helper */}
-										<div className="mt-4 p-3 bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg border border-orange-100">
-											<p className="text-xs text-orange-700 text-center mb-2">
-												� <strong>मोबाइल उपयोगकर्ताओं के लिए टिप्स:</strong>
+										{/* Image Controls Overlay */}
+										<div className="absolute top-4 right-4 flex gap-2">
+											<Button
+												onClick={() => handleImageClick(image)}
+												className="bg-black/50 hover:bg-black/70 text-white p-2"
+												size="sm"
+											>
+												<ZoomIn className="h-4 w-4" />
+											</Button>
+											<Button
+												onClick={() => downloadImage(image.src, image.title)}
+												className="bg-orange-600/90 hover:bg-orange-700 text-white p-2"
+												size="sm"
+											>
+												<Download className="h-4 w-4" />
+											</Button>
+										</div>
+									</div>
+									
+									{/* Image Title Bar */}
+									<div className="bg-gradient-to-r from-orange-50 to-amber-50 p-4 border-t border-gray-100">
+										<div className="text-center">
+											<h3 className="text-lg font-semibold text-gray-800 mb-1">
+												{image.title}
+											</h3>
+											<p className="text-sm text-gray-600">
+												{image.alt}
 											</p>
-											<ul className="text-xs text-orange-600 space-y-1">
-												<li>• बेहतर देखने के लिए फोन को लैंडस्केप में घुमाएं</li>
-												<li>• ज़ूम करने के लिए PDF पर टैप करें</li>
-												<li>• सबसे अच्छे अनुभव के लिए "नई टैब में खोलें" का उपयोग करें</li>
-											</ul>
 										</div>
 									</div>
-								) : (									// Desktop PDF Viewer
-									<div className="p-6">
-										<div className="bg-white rounded-xl shadow-inner border border-gray-200 overflow-hidden">
-											<iframe
-												src={`${pdfDocument.src}#toolbar=0&navpanes=0&scrollbar=0&page=1&view=FitH&zoom=100`}
-												className="w-full border-0"
-												style={{ 
-													height: '80vh',
-													minHeight: '600px'
-												}}
-												title={pdfDocument.title}
-												loading="lazy"
-												allow="fullscreen"
-											/>
-										</div>
-									</div>
-								)}							</div>
+								</CardContent>
+							</Card>
 							
-							{/* Alternative Access Section */}
-							<div className="bg-gray-50 p-4 sm:p-6 text-center border-t border-gray-100">
-								<p className="text-sm text-gray-600 mb-3">
-									यदि PDF ठीक से नहीं दिख रहा है या आपको कोई समस्या आ रही है
-								</p>
-								<div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-									<Button
-										onClick={handleDownload}
-										className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg transition-colors"
-									>
-										<Download className="h-4 w-4 mr-2" />
-										PDF डाउनलोड करें
-									</Button>
-									<Button
-										onClick={openPdfInNewTab}
-										variant="outline"
-										className="border-orange-300 text-orange-600 hover:bg-orange-50 px-6 py-2 rounded-lg"
-									>
-										<ZoomIn className="h-4 w-4 mr-2" />
-										नई विंडो में खोलें
-									</Button>
+							{/* Reading Progress Indicator */}
+							{index < galleryImages.length - 1 && (
+								<div className="text-center mt-8 mb-4">
+									<div className="inline-flex items-center gap-2 text-gray-400">
+										<div className="h-px w-12 bg-gradient-to-r from-transparent to-gray-300"></div>
+										<span className="text-xs font-medium">स्क्रॉल करें</span>
+										<div className="h-px w-12 bg-gradient-to-l from-transparent to-gray-300"></div>
+									</div>
 								</div>
-							</div>
-						</CardContent>
-					</Card>
+							)}
+						</div>
+					))}
+					
+					{/* End of Gallery Indicator */}
+					<div className="text-center py-8">
+						<div className="inline-block px-6 py-3 bg-gradient-to-r from-orange-100 to-amber-100 rounded-full">
+							<span className="text-orange-700 font-medium">गैलरी समाप्त</span>
+						</div>
+					</div>
 				</div>
+
+				{/* Floating Navigation Controls */}
+				<div className="fixed bottom-6 right-6 flex flex-col gap-2 z-40">
+					<Button
+						onClick={prevPage}
+						disabled={currentPage <= 1}
+						className="bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+						size="sm"
+					>
+						<ChevronUp className="h-5 w-5" />
+					</Button>
+					<div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-medium text-gray-700 text-center min-w-[50px]">
+						{currentPage}/{galleryImages.length}
+					</div>
+					<Button
+						onClick={nextPage}
+						disabled={currentPage >= galleryImages.length}
+						className="bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+						size="sm"
+					>
+						<ChevronDown className="h-5 w-5" />
+					</Button>
+				</div>
+
+				{/* Full Screen Image Modal */}
+				{selectedImage && (
+					<div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+						<div className="relative max-w-full max-h-full">
+							<Image
+								src={selectedImage.src}
+								alt={selectedImage.alt}
+								width={1200}
+								height={800}
+								className="max-w-full max-h-[90vh] object-contain"
+								quality={95}
+							/>
+							<Button
+								onClick={closeModal}
+								className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2"
+								size="sm"
+							>
+								<X className="h-4 w-4" />
+							</Button>
+							<Button
+								onClick={() => downloadImage(selectedImage.src, selectedImage.title)}
+								className="absolute bottom-4 right-4 bg-orange-600 hover:bg-orange-700 text-white"
+								size="sm"
+							>
+								<Download className="h-4 w-4 mr-2" />
+								डाउनलोड
+							</Button>
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	)
