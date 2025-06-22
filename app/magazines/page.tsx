@@ -1,6 +1,5 @@
 import { Suspense } from "react"
 import { MagazineGrid } from "@/components/magazine-grid"
-import { MagazineSearch } from "@/components/magazine-search"
 import { Skeleton } from "@/components/ui/skeleton"
 
 export const metadata = {
@@ -21,11 +20,6 @@ export default function MagazinesPage() {
             उत्तराखंड की संस्कृति और विरासत से भरपूर मासिक पत्रिका
           </p>
           <div className="mx-auto h-1 w-12 sm:w-16 md:w-20 bg-gradient-to-r from-orange-500 to-amber-500 mb-6 sm:mb-8 md:mb-12"></div>
-        </div>
-
-        {/* Search Section */}
-        <div className="mb-8 sm:mb-12 md:mb-16 px-3 sm:px-4">
-          <MagazineSearch />
         </div>
 
         {/* Magazines Grid */}

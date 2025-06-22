@@ -1,8 +1,5 @@
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Globe, Users } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, MessageCircle, Globe, Users } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 
 export const metadata = {
@@ -78,7 +75,7 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <p className="font-medium text-gray-900 text-sm sm:text-base">अक्षत पब्लिकेशन्स</p>
-                  <p className="text-gray-700 text-sm sm:text-base">देहरादून, उत्तराखंड</p>
+                  <p className="text-gray-700 text-sm sm:text-base">आर.के. पुरम, जोगीवाला,देहरादून, उत्तराखंड</p>
                   <Badge className="bg-green-100 text-green-800 text-xs">मुख्यालय</Badge>
                 </CardContent>
               </Card>
@@ -101,129 +98,84 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form and Team Section */}
+      {/* Team and Quick Contact Section */}
       <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
-              {/* Contact Form */}
+            <div className="mb-8 sm:mb-12 text-center">
+              <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                हमारी टीम
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600">संपादकीय टीम और त्वरित संपर्क विकल्प</p>
+              <div className="mx-auto mt-3 sm:mt-4 h-1 w-16 sm:w-20 bg-gradient-to-r from-orange-500 to-amber-500"></div>
+            </div>
+
+            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
+              {/* Editorial Team */}
               <Card className="bg-white/80 backdrop-blur">
                 <CardHeader className="pb-4 sm:pb-6">
-                  <CardTitle className="flex items-center gap-2 text-orange-800 text-xl sm:text-2xl">
-                    <Send className="h-5 w-5 sm:h-6 sm:w-6" />
-                    संदेश भेजें
+                  <CardTitle className="flex items-center gap-2 text-amber-800 text-xl sm:text-2xl">
+                    <Users className="h-5 w-5 sm:h-6 sm:w-6" />
+                    संपादकीय टीम
                   </CardTitle>
-                  <p className="text-gray-600 text-sm sm:text-base">हमें अपना संदेश भेजें, हम जल्दी ही आपसे संपर्क करेंगे</p>
+                  <p className="text-gray-600 text-sm sm:text-base">हमारी टीम से सीधे संपर्क करें</p>
                 </CardHeader>
-                <CardContent>
-                  <form className="space-y-4 sm:space-y-6">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">नाम *</label>
-                        <Input
-                          placeholder="आपका नाम"
-                          className="border-orange-200 focus:border-orange-500 h-10 sm:h-12"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">फोन नंबर</label>
-                        <Input
-                          placeholder="आपका फोन नंबर"
-                          className="border-orange-200 focus:border-orange-500 h-10 sm:h-12"
-                        />
-                      </div>
-                    </div>
+                <CardContent className="space-y-4 sm:space-y-6">
+                  <div className="rounded-lg bg-gradient-to-r from-orange-50 to-amber-50 p-4 sm:p-6">
+                    <h3 className="font-semibold text-orange-800 mb-2 text-base sm:text-lg">मुख्य संपादक</h3>
+                    <p className="font-medium text-gray-900 text-sm sm:text-base">प्रो.(डा.) के.एल. तलवाड़</p>
+                    <p className="text-xs sm:text-sm text-gray-600 mt-1">संस्थापक एवं मुख्य संपादक</p>
+                  </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">ईमेल *</label>
-                      <Input
-                        type="email"
-                        placeholder="आपका ईमेल पता"
-                        className="border-orange-200 focus:border-orange-500 h-10 sm:h-12"
-                      />
-                    </div>
+                  <div className="rounded-lg bg-gradient-to-r from-blue-50 to-cyan-50 p-4 sm:p-6">
+                    <h3 className="font-semibold text-blue-800 mb-2 text-base sm:text-lg">उप संपादक</h3>
+                    <p className="font-medium text-gray-900 text-sm sm:text-base">श्री अंकित तिवारी</p>
+                    <p className="text-xs sm:text-sm text-gray-600 mt-1">सामग्री संपादन एवं प्रकाशन</p>
+                  </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">विषय</label>
-                      <Input
-                        placeholder="संदेश का विषय"
-                        className="border-orange-200 focus:border-orange-500 h-10 sm:h-12"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">संदेश *</label>
-                      <Textarea
-                        placeholder="अपना संदेश यहां लिखें..."
-                        className="min-h-24 sm:min-h-32 border-orange-200 focus:border-orange-500"
-                      />
-                    </div>
-
-                    <Button className="w-full bg-orange-600 hover:bg-orange-700 h-10 sm:h-12">
-                      <Send className="mr-2 h-4 w-4" />
-                      संदेश भेजें
-                    </Button>
-                  </form>
+                  <div className="rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 p-4 sm:p-6">
+                    <h3 className="font-semibold text-green-800 mb-2 text-base sm:text-lg">सह संपादक</h3>
+                    <p className="font-medium text-gray-900 text-sm sm:text-base">श्री अमन तलवाड़</p>
+                    <p className="text-xs sm:text-sm text-gray-600 mt-1">डिजिटल मीडिया एवं तकनीकी सहायता</p>
+                  </div>
                 </CardContent>
               </Card>
 
-              {/* Team Contact */}
-              <div className="space-y-6 sm:space-y-8">
-                <Card className="bg-white/80 backdrop-blur">
-                  <CardHeader className="pb-4 sm:pb-6">
-                    <CardTitle className="flex items-center gap-2 text-amber-800 text-xl sm:text-2xl">
-                      <Users className="h-5 w-5 sm:h-6 sm:w-6" />
-                      संपादकीय टीम
-                    </CardTitle>
-                    <p className="text-gray-600 text-sm sm:text-base">हमारी टीम से सीधे संपर्क करें</p>
-                  </CardHeader>
-                  <CardContent className="space-y-4 sm:space-y-6">
-                    <div className="rounded-lg bg-gradient-to-r from-orange-50 to-amber-50 p-3 sm:p-4">
-                      <h3 className="font-semibold text-orange-800 mb-2 text-sm sm:text-base">मुख्य संपादक</h3>
-                      <p className="font-medium text-gray-900 text-sm sm:text-base">प्रो.(डा.) के.एल. तलवाड़</p>
-                      <p className="text-xs sm:text-sm text-gray-600 mt-1">संस्थापक एवं मुख्य संपादक</p>
+              {/* Quick Contact */}
+              <Card className="bg-white/80 backdrop-blur">
+                <CardHeader className="pb-4 sm:pb-6">
+                  <CardTitle className="flex items-center gap-2 text-green-800 text-xl sm:text-2xl">
+                    <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
+                    त्वरित संपर्क
+                  </CardTitle>
+                  <p className="text-gray-600 text-sm sm:text-base">तुरंत संपर्क करने के लिए इन विकल्पों का उपयोग करें</p>
+                </CardHeader>
+                <CardContent className="space-y-4 sm:space-y-6">
+                  <a
+                    href="https://wa.me/9412142822"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 sm:p-6 rounded-lg bg-green-50 hover:bg-green-100 transition-colors cursor-pointer border border-green-200"
+                  >
+                    <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-green-600 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold text-gray-900 text-base sm:text-lg">WhatsApp</p>
+                      <p className="text-sm sm:text-base text-gray-600">9412142822 पर तुरंत संदेश भेजें</p>
                     </div>
+                  </a>
 
-                    <div className="rounded-lg bg-gradient-to-r from-blue-50 to-cyan-50 p-3 sm:p-4">
-                      <h3 className="font-semibold text-blue-800 mb-2 text-sm sm:text-base">उप संपादक</h3>
-                      <p className="font-medium text-gray-900 text-sm sm:text-base">श्री अंकित तिवारी</p>
-                      <p className="text-xs sm:text-sm text-gray-600 mt-1">सामग्री संपादन एवं प्रकाशन</p>
+                  <a
+                    href="mailto:sainsrijanpatal@gmail.com"
+                    className="flex items-center gap-4 p-4 sm:p-6 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors cursor-pointer border border-blue-200"
+                  >
+                    <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold text-gray-900 text-base sm:text-lg">ईमेल सहायता</p>
+                      <p className="text-sm sm:text-base text-gray-600">24 घंटे के अंदर उत्तर की गारंटी</p>
                     </div>
-
-                    <div className="rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 p-3 sm:p-4">
-                      <h3 className="font-semibold text-green-800 mb-2 text-sm sm:text-base">सह संपादक</h3>
-                      <p className="font-medium text-gray-900 text-sm sm:text-base">श्री अमन तलवाड़</p>
-                      <p className="text-xs sm:text-sm text-gray-600 mt-1">डिजिटल मीडिया एवं तकनीकी सहायता</p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white/80 backdrop-blur">
-                  <CardHeader className="pb-3 sm:pb-4">
-                    <CardTitle className="flex items-center gap-2 text-green-800 text-lg sm:text-xl">
-                      <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
-                      त्वरित संपर्क
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 sm:space-y-4">
-                    <div className="flex items-center gap-3 p-3 rounded-lg bg-green-50">
-                      <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-green-600 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-gray-900 text-sm sm:text-base">WhatsApp</p>
-                        <p className="text-xs sm:text-sm text-gray-600">9412142822 पर तुरंत संदेश भेजें</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-50">
-                      <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-gray-900 text-sm sm:text-base">ईमेल सहायता</p>
-                        <p className="text-xs sm:text-sm text-gray-600">24 घंटे के अंदर उत्तर की गारंटी</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+                  </a>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

@@ -159,7 +159,7 @@ export default function HomePage() {
 								हमारी पत्रिकाएं
 							</h2>
 							<p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-								उत्तराखंड की संस्कृति और विरासत से भरपूर मासिक पत्रिका
+								उत्तराखंड की संस्कृति और विरासत से समृद्ध मासिक पत्रिका
 							</p>
 							<div className="mx-auto mt-2 sm:mt-3 md:mt-4 h-1 w-12 sm:w-16 md:w-20 bg-gradient-to-r from-orange-500 to-amber-500"></div>
 						</div>
@@ -223,7 +223,15 @@ export default function HomePage() {
 						</div>
 
 						<div className="grid gap-3 sm:gap-4 md:gap-6 md:grid-cols-3 px-3 sm:px-4">
-							<Card className="text-center w-full">
+							<Card className="text-center w-full flex flex-col items-center">
+								<div className="flex justify-center mt-4 mb-2">
+									{/* eslint-disable-next-line @next/next/no-img-element */}
+									<img
+										src="/ab1.jpg"
+										alt="प्रो.(डा.)के.एल.तलवाड़"
+										className="w-24 h-24 rounded-full object-cover border-4 border-orange-200 shadow"
+									/>
+								</div>
 								<CardHeader className="pb-2 sm:pb-3">
 									<CardTitle className="text-orange-800 text-sm sm:text-base md:text-lg">मुख्य संपादक</CardTitle>
 								</CardHeader>
@@ -232,7 +240,15 @@ export default function HomePage() {
 								</CardContent>
 							</Card>
 
-							<Card className="text-center w-full">
+							<Card className="text-center w-full flex flex-col items-center">
+								<div className="flex justify-center mt-4 mb-2">
+									{/* eslint-disable-next-line @next/next/no-img-element */}
+									<img
+										src="/ab2.jpg"
+										alt="श्री अंकित तिवारी"
+										className="w-24 h-24 rounded-full object-cover border-4 border-orange-200 shadow"
+									/>
+								</div>
 								<CardHeader className="pb-2 sm:pb-3">
 									<CardTitle className="text-orange-800 text-sm sm:text-base md:text-lg">उप संपादक</CardTitle>
 								</CardHeader>
@@ -241,9 +257,17 @@ export default function HomePage() {
 								</CardContent>
 							</Card>
 
-							<Card className="text-center w-full md:col-span-1">
+							<Card className="text-center w-full flex flex-col items-center">
+								<div className="flex justify-center mt-4 mb-2">
+									{/* eslint-disable-next-line @next/next/no-img-element */}
+									<img
+										src="/ab3.jpg"
+										alt="श्री अमन तलवाड़"
+										className="w-24 h-24 rounded-full object-cover border-4 border-orange-200 shadow"
+									/>
+								</div>
 								<CardHeader className="pb-2 sm:pb-3">
-									<CardTitle className="text-orange-800 text-sm sm:text-base md:text-lg">सह संपादक</CardTitle>
+									<CardTitle className="text-orange-800 text-sm sm:text-base md:text-lg">तकनीकी संपादक</CardTitle>
 								</CardHeader>
 								<CardContent>
 									<p className="font-medium text-gray-900 text-sm sm:text-base">श्री अमन तलवाड़</p>
@@ -275,7 +299,7 @@ export default function HomePage() {
 										<Phone className="h-4 w-4 sm:h-5 sm:w-5 text-orange-600 mt-1 flex-shrink-0" />
 										<div className="min-w-0 flex-1">
 											<p className="font-medium text-gray-900 text-sm sm:text-base">Mobile/WhatsApp</p>
-											<p className="text-gray-700 text-sm sm:text-base break-all">9412142822, 8630893871</p>
+											<p className="text-gray-700 text-sm sm:text-base break-all">9412142822, 8630893870</p>
 										</div>
 									</div>
 
@@ -294,7 +318,7 @@ export default function HomePage() {
 											<p className="text-gray-700 text-sm sm:text-base">
 												अक्षत पब्लिकेशन्स
 												<br />
-												देहरादून, उत्तराखंड
+												आर.के. पुरम, जोगीवाला
 											</p>
 										</div>
 									</div>
