@@ -45,6 +45,13 @@ const galleryImages: GalleryImage[] = [
 		src: "/gallery/5.jpg",
 		alt: "गैलरी छवि 5",
 		title: "छवि 5"
+	},
+	{
+	
+		id: 6,
+		src: "/gallery/6.jpg",
+		alt: "गैलरी छवि 6",
+		title: "छवि 6"
 	}
 ]
 

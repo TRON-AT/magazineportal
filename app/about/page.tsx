@@ -248,6 +248,35 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+
+         <div className="mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
+                  <img
+                    src="/aw1.jpg"
+                    alt="प्रो. के.एल. तलवाड़ छवि 1"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
+                  <img
+                    src="/aw2.jpg"
+                    alt="प्रो. के.एल. तलवाड़ छवि 2"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="w-full aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
+                  <img
+                    src="/aw3.jpg"
+                    alt="प्रो. के.एल. तलवाड़ छवि 3"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
       </section>
 
       {/* Publications Section */}
