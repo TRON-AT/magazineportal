@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
-import { Search, BookOpen, Menu, X } from "lucide-react"
+import { Search, BookOpen, Menu, X, Settings } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export function SiteHeader() {
@@ -26,12 +26,18 @@ export function SiteHeader() {
           <MainNav />
         </div>
 
-        {/* Desktop Search */}
-        <div className="hidden md:flex items-center">
+        {/* Desktop Search and Admin */}
+        <div className="hidden md:flex items-center space-x-2">
           <Button variant="ghost" size="icon" className="text-gray-600 hover:text-orange-600">
             <Search className="h-5 w-5" />
             <span className="sr-only">Search</span>
           </Button>
+          <Link href="/admin/login">
+            <Button variant="outline" size="sm" className="text-gray-600 hover:text-orange-600 border-gray-200">
+              <Settings className="h-4 w-4 mr-1" />
+              Admin
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu */}
@@ -97,6 +103,14 @@ export function SiteHeader() {
                     onClick={() => setIsOpen(false)}
                   >
                     संपर्क
+                  </Link>
+                  <Link
+                    href="/admin/login"
+                    className="flex items-center py-3 px-3 text-base font-medium text-gray-900 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Settings className="h-4 w-4 mr-2" />
+                    Admin
                   </Link>
                 </div>
 
