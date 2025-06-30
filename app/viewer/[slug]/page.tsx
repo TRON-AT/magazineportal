@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button"
 
 // PDF data - same as in magazine-grid.tsx
 const pdfList = [
+
+	{
+		id: "0",
+		title: "Sain Srijan Patal Monthly Magazine 11th issue",
+		filename: "Sain Srijan Patal Monthly Magazine 11th issue (June-2025).pdf",
+		date: "जून 2025",
+	},
     {
         id: "1",
         title: "Sain Srijan Patal Monthly Magazine 10th issue",
@@ -68,6 +75,8 @@ const pdfList = [
         filename: "Sain Srijan Patal News Letter  First Issue.pdf",
         date: "अगस्त 2024",
     },
+	
+	
 ]
 
 export default function MagazineViewerPage() {

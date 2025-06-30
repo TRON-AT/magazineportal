@@ -18,6 +18,13 @@ interface PdfItem {
 
 // Simple PDF list with cover images - just add your PDF files here!
 const pdfList: PdfItem[] = [
+	{
+		id: "0",
+		title: "Sain Srijan Patal Monthly Magazine 11th issue",
+		filename: "Sain Srijan Patal Monthly Magazine 11th issue (June-2025).pdf",
+		date: "जून 2025",
+		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 11th issue (June-2025).png",
+	},
     {
         id: "1",
         title: "Sain Srijan Patal Monthly Magazine 10th issue",
