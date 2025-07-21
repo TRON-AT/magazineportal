@@ -17,7 +17,19 @@ type GalleryImage = {
 // Gallery images
 const galleryImages: GalleryImage[] = [
 	{
-		id: 0,
+		id: 100,
+		src: "/gallery/000.jpg",
+		alt: "गैलरी छवि ",
+		title: "छवि "
+	},
+	{
+		id: 101,
+		src: "/gallery/00.jpg",
+		alt: "गैलरी छवि ",
+		title: "छवि "
+	},
+	{
+		id: 102,
 		src: "/gallery/0.jpg",
 		alt: "गैलरी छवि 0",
 		title: "छवि "
