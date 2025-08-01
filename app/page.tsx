@@ -5,28 +5,28 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 // Featured magazines for home page
 const featuredMagazines = [
-
 	{
 		id: "0",
+		title: "Sain Srijan Patal Monthly Magazine 12th issue (July-2025)",
+		filename: "Sain Srijan Patal Monthly Magazine 12th issue (July-2025).pdf",
+		date: "जुलाई 2025",
+		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 12th issue (July-2025).png",
+	},
+	{
+		id: "1",
 		title: "Sain Srijan Patal Monthly Magazine 11th issue",
 		filename: "Sain Srijan Patal Monthly Magazine 11th issue (June-2025).pdf",
 		date: "जून 2025",
 		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 11th issue (June-2025).png",
 	},
 	{
-		id: "1",
+		id: "2",
         title: "Sain Srijan Patal Monthly Magazine 10th issue",
         filename: "Sain Srijan Patal Monthly Magazine 10th issue (May-2025).pdf",
         date: "मई 2025",
         coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 10th issue (May-2025).png",
     },
-    {
-        id: "2",
-        title: "Sain Srijan Patal Monthly Magazine 9th issue",
-        filename: "Sain Srijan Patal Monthly Magazine 9th issue (April-2025).pdf",
-        date: "अप्रैल 2025",
-        coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 9th issue (April-2025).png",
-    },
+   
     
 ]
 
