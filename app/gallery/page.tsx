@@ -17,59 +17,70 @@ type GalleryImage = {
 // Gallery images
 const galleryImages: GalleryImage[] = [
 	{
-		id: 100,
-		src: "/gallery/000.jpg",
-		alt: "गैलरी छवि ",
-		title: "छवि "
-	},
-	{
-		id: 101,
-		src: "/gallery/00.jpg",
-		alt: "गैलरी छवि ",
-		title: "छवि "
-	},
-	{
-		id: 102,
-		src: "/gallery/0.jpg",
-		alt: "गैलरी छवि 0",
-		title: "छवि "
-	},
-	{
 		id: 1,
-		src: "/gallery/1.jpg",
+		src: "/gallery/001.jpg",
 		alt: "गैलरी छवि 1",
 		title: "छवि 1"
 	},
 	{
 		id: 2,
-		src: "/gallery/2.jpg",
+		src: "/gallery/002.jpg",
 		alt: "गैलरी छवि 2",
 		title: "छवि 2"
 	},
 	{
 		id: 3,
-		src: "/gallery/3.jpg",
+		src: "/gallery/003.jpg",
 		alt: "गैलरी छवि 3",
 		title: "छवि 3"
 	},
 	{
 		id: 4,
-		src: "/gallery/4.jpg",
+		src: "/gallery/004.jpg",
 		alt: "गैलरी छवि 4",
 		title: "छवि 4"
 	},
 	{
 		id: 5,
-		src: "/gallery/5.jpg",
+		src: "/gallery/005.jpg",
 		alt: "गैलरी छवि 5",
 		title: "छवि 5"
 	},
 	{
-	
 		id: 6,
-		src: "/gallery/6.jpg",
+		src: "/gallery/006.jpg",
 		alt: "गैलरी छवि 6",
 		title: "छवि 6"
+	},
+	{
+		id: 7,
+		src: "/gallery/007.jpg",
+		alt: "गैलरी छवि 7",
+		title: "छवि 7"
+	},
+	{
+		id: 8,
+		src: "/gallery/008.jpg",
+		alt: "गैलरी छवि 8",
+		title: "छवि 8"
+	},
+	{
+		id: 9,
+		src: "/gallery/009.jpg",
+		alt: "गैलरी छवि 9",
+		title: "छवि 9"
+	},
+	{
+		id: 10,
+		src: "/gallery/010.jpg",
+		alt: "गैलरी छवि 10",
+		title: "छवि 10"
+	},
+	{
+		id: 11,
+		src: "/gallery/011.jpg",
+		alt: "गैलरी छवि 11",
+		title: "छवि 11"
 	}
 ]
 
