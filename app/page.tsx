@@ -7,28 +7,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 const featuredMagazines = [
 	{
 		id: "0",
-		title: "Sain Srijan Patal Monthly Magazine 13th  (Aug-2025)",
+		title: "साईं सृजन पटल मासिक पत्रिका 13वाँ अंक (अगस्त-2025)",
 		filename: "Sain Srijan Patal Monthly Magazine 13th  (Aug-2025).pdf",
-		date: "जुलाई 2025",
+		date: "अगस्त 2025",
 		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 13th  (Aug-2025).png",
 	},
 	{
 		id: "1",
-		title: "Sain Srijan Patal Monthly Magazine 12th issue (July-2025)",
+		title: "साईं सृजन पटल मासिक पत्रिका 12वाँ अंक (जुलाई-2025)",
 		filename: "Sain Srijan Patal Monthly Magazine 12th issue (July-2025).pdf",
 		date: "जुलाई 2025",
 		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 12th issue (July-2025).png",
 	},
 	{
 		id: "2",
-		title: "Sain Srijan Patal Monthly Magazine 11th issue",
+		title: "साईं सृजन पटल मासिक पत्रिका 11वाँ अंक (जून-2025)",
 		filename: "Sain Srijan Patal Monthly Magazine 11th issue (June-2025).pdf",
 		date: "जून 2025",
 		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 11th issue (June-2025).png",
 	},
-	
-   
-    
 ]
 
 export default function HomePage() {

@@ -22,7 +22,7 @@ const pdfList: PdfItem[] = [
 		id: "0",
 		title: "Sain Srijan Patal Monthly Magazine 13th  (Aug-2025)",
 		filename: "Sain Srijan Patal Monthly Magazine 13th  (Aug-2025).pdf",
-		date: "जुलाई 2025",
+		date: "अगस्त 2025",
 		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 13th  (Aug-2025).png",
 	},
 	{
