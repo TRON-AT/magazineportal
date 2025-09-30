@@ -7,6 +7,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 const featuredMagazines = [
 	{
 		id: "0",
+		title: "साईं सृजन पटल मासिक पत्रिका 14वाँ अंक (सितंबर-2025)",
+		filename: "Sain Srijan Patal Monthly Magazine 14th  (Sept-2025).pdf",
+		date: "सितंबर 2025",
+		coverImage: "/pdf/Sain Srijan Patal Monthly Magazine 14th  (Sept-2025).png",
+	},
+	{
+		id: "0",
 		title: "साईं सृजन पटल मासिक पत्रिका 13वाँ अंक (अगस्त-2025)",
 		filename: "Sain Srijan Patal Monthly Magazine 13th  (Aug-2025).pdf",
 		date: "अगस्त 2025",
